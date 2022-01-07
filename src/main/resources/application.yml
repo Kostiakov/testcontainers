@@ -8,3 +8,8 @@ spring:
     password: ${DATABASE_PASSWORD:testcontainers_user}
   liquibase:
     change-log: "classpath:db-migrations/changelog.xml"
+    default-schema: ${DATABASE_SCHEMA:testcontainers}
+  jpa:
+    properties:
+      hibernate:
+        default_schema: ${DATABASE_SCHEMA:testcontainers}
