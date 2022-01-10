@@ -1,5 +1,6 @@
 package com.testcontainers.demo.service;
 
+import com.testcontainers.demo.model.DemoEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,7 +10,10 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @Testcontainers
@@ -32,7 +36,10 @@ class DemoServiceTest {
 
     @Test
     void findAllSuccess() {
-        assertDoesNotThrow(() -> demoService.findAll());
+        List<DemoEntity> list = demoService.findAll();
+
+        assertNotNull(list);
+        assertEquals(2, list.size());
     }
 
 }

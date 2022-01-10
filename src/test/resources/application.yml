@@ -9,7 +9,7 @@ spring:
   liquibase:
     change-log: "classpath:db-migrations/changelog.xml"
     default-schema: ${DATABASE_SCHEMA:testcontainers}
-    contexts: prod
+    contexts: test
   jpa:
     properties:
       hibernate:
