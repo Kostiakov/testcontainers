@@ -36,7 +36,7 @@ class DemoServiceTest {
 
     @Test
     void findAllSuccess() {
-        List<DemoEntity> list = demoService.findAll();
+        List<DemoEntity> list = demoService.findAll(0, 10);
 
         assertNotNull(list);
         assertEquals(2, list.size());

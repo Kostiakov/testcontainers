@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface DemoService {
 
-    List<DemoEntity> findAll();
+    List<DemoEntity> findAll(Integer pageNumber, Integer pageSize);
 
 }
